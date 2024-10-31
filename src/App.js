@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 function App() {
    const [data, setData] = useState([]);
    useEffect(() => {
-      // axios
-      //    .get("https://template-api-dt28.onrender.com")
-      //    .then((res) => console.log(res.data));
+      axios
+         .get("https://template-api-2fco.onrender.com")
+         .then((res) => console.log(res.data));
       console.log("test log");
    }, []);
    return (
