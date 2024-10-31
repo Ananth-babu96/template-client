@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   const [data, setData] = useState([]);
+   useEffect(() => {
+      axios
+         .get("https://photography-project-7b9q.onrender.com")
+         .then((res) => setData(res.data));
+   }, []);
+   return (
+      <div className="App">
+         {data?.map((item, index) => {
+            return (
+               <img
+                  style={{ height: "200px" }}
+                  src={`https://photography-project-7b9q.onrender.com/images/${item.image}`}
+               />
+            );
+         })}
+      </div>
+   );
 }
 
 export default App;
