@@ -1,6 +1,6 @@
 {
    "name": "template-client",
-   "homepage": "https://template-client.onrender.com/template-client",
+   "homepage": "https://template-client-two.vercel.app/",
    "version": "0.1.0",
    "private": true,
    "dependencies": {
