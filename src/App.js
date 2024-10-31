@@ -7,18 +7,19 @@ function App() {
    useEffect(() => {
       axios
          .get("https://template-api-4xkc.onrender.com")
-         .then((res) => setData(res.data));
+         .then((res) => console.log(res.data));
    }, []);
    return (
       <div className="App">
-         {data?.map((item, index) => {
+         {/* {data?.map((item, index) => {
             return (
                <img
                   style={{ height: "200px" }}
                   src={`https://photography-project-7b9q.onrender.com/images/${item.image}`}
                />
             );
-         })}
+         })} */}
+         hi
       </div>
    );
 }
