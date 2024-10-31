@@ -6,7 +6,7 @@ function App() {
    const [data, setData] = useState([]);
    useEffect(() => {
       axios
-         .get("https://template-api-4xkc.onrender.com")
+         .get("https://template-api-p59c.onrender.com")
          .then((res) => console.log(res.data));
    }, []);
    return (
