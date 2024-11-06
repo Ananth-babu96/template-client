@@ -1,0 +1,19 @@
+$breakPoints: (
+   "xs": "325px",
+   "s": "410px",
+   "m": "718px",
+   "l": "993px",
+   "xl": "1164px",
+);
+
+@mixin bpMax($size) {
+   @media (max-width: map-get($breakPoints,$size)) {
+      @content;
+   }
+}
+
+@mixin bpMin($size) {
+   @media (min-width: map-get($breakPoints,$size)) {
+      @content;
+   }
+}

@@ -1,0 +1,58 @@
+@use "../../GlobalStyles//breakPoints.scss" as *;
+.gallery {
+   &_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 240px 120px;
+      grid-auto-flow: dense;
+      gap: 10px;
+
+      @include bpMin(m) {
+         grid-auto-rows: 340px 170px;
+         grid-template-columns: repeat(4, 1fr);
+      }
+      @include bpMin(l) {
+         grid-auto-rows: 400px 200px;
+         margin: 0 120px;
+      }
+
+      & > div {
+         width: 100%;
+         height: 100%;
+
+         &:nth-child(4),
+         &:nth-child(7),
+         &:nth-child(12),
+         &:nth-child(14),
+         &:nth-child(15),
+         &:nth-child(18),
+         &:nth-child(20),
+         &:nth-child(24) {
+            grid-column: span 2;
+         }
+
+         &:nth-child(5),
+         &:nth-child(15) {
+            grid-row: span 2;
+            grid-column: span 2;
+         }
+         &:nth-child(22) {
+            grid-row: span 2;
+         }
+         &:nth-child(7),
+         &:nth-child(14),
+         &:nth-child(17),
+         &:nth-child(23) {
+            @include bpMin(l) {
+               grid-row: span 2;
+            }
+         }
+
+         & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+   }
+}

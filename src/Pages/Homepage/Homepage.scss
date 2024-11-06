@@ -1,0 +1,58 @@
+@use "../../GlobalStyles/breakPoints.scss" as *;
+@use "../../GlobalStyles/variables.scss" as *;
+.home {
+   & .title {
+      text-align: center;
+      padding: 22px 8px;
+
+      & .h1 {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin-bottom: 32px;
+
+         @include bpMax(m) {
+            margin-bottom: 22px;
+         }
+         & span {
+            color: $baseColor;
+            font-size: 52px;
+            height: 52px;
+            transform: rotate(35deg);
+
+            &:nth-child(1) {
+               transform: rotate(-35deg);
+            }
+
+            @include bpMax(m) {
+               font-size: 32px;
+               height: 32px;
+            }
+            @include bpMax(s) {
+               font-size: 26px;
+               height: 26px;
+            }
+         }
+         h1 {
+            color: $baseColor;
+            position: relative;
+         }
+      }
+   }
+   & .button-container {
+      display: flex;
+      justify-content: center;
+   }
+   .break {
+      width: 80%;
+      height: 4px;
+      background: $baseColor;
+      margin: 52px auto;
+      border-radius: 22px;
+
+      @include bpMax(s) {
+         height: 2px;
+         margin: 32px auto;
+      }
+   }
+}

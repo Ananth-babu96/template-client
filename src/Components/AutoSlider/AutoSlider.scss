@@ -1,0 +1,46 @@
+@use "../../Globalstyles/breakPoints.scss" as *;
+@use "../../Globalstyles/variables.scss" as *;
+.slider {
+   display: flex;
+   overflow: hidden;
+   height: 42px;
+   margin: 8px 32px;
+   align-items: center;
+   gap: 18px;
+   position: relative;
+   user-select: none;
+   border-radius: 18px;
+   color: #000;
+
+   @include bpMax(s) {
+      height: 22px;
+      margin: 8px;
+   }
+
+   &_container {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-around;
+      min-width: 100%;
+      gap: 18px;
+      animation: slide 10s linear infinite;
+
+      & p {
+         &.heart {
+            color: $baseColor;
+         }
+         @include bpMax(s) {
+            font-size: 14px;
+         }
+      }
+   }
+}
+
+@keyframes slide {
+   from {
+      transform: translateX(0);
+   }
+   to {
+      transform: translateX(calc(-100% - 18px));
+   }
+}

@@ -1,0 +1,44 @@
+@use "../../GlobalStyles/variables.scss" as *;
+@use "../../GlobalStyles/breakPoints.scss" as *;
+.navbar {
+   width: 100%;
+   position: fixed;
+   z-index: 99;
+   color: #fff;
+   padding: 16px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   &_logo {
+      & h1 {
+         color: $baseColor;
+         font-size: 44px;
+
+         @include bpMax(m) {
+            font-size: 22px;
+         }
+         & span {
+            font-weight: 300;
+            color: #fff;
+         }
+      }
+   }
+   &_menu {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-radius: 24px;
+      & div {
+         height: 2px;
+         width: 35px;
+         background: $baseColor;
+
+         &:nth-child(2) {
+            width: 30px;
+            align-self: flex-end;
+            background-color: #fff;
+         }
+      }
+   }
+}

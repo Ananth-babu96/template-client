@@ -1,0 +1,77 @@
+@use "../../GlobalStyles/variables.scss" as *;
+@use "../../GlobalStyles/breakPoints.scss" as *;
+.about {
+   &_content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include bpMin(m) {
+         flex-direction: row;
+         gap: 32px;
+         justify-content: center;
+      }
+      & .about_image {
+         position: relative;
+         margin-top: 22px;
+         display: flex;
+         justify-content: center;
+         width: 260px;
+         height: 130px;
+         border-radius: 22px;
+         overflow: hidden;
+
+         @include bpMin(s) {
+            height: 180px;
+            width: 300px;
+         }
+         @include bpMin(m) {
+            height: 200px;
+            width: 320px;
+         }
+         @include bpMax(xs) {
+            width: 100%;
+         }
+
+         & img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+
+            @include bpMin(s) {
+               width: 100%;
+            }
+         }
+         & .background-design {
+            height: 140px;
+            display: none;
+            width: 100%;
+            background: $baseColor;
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            border-top-left-radius: 45px;
+            border-bottom-right-radius: 45px;
+            border-top-right-radius: 85px;
+            border-bottom-left-radius: 85px;
+            transform: rotate(5deg);
+            @include bpMin(s) {
+               height: 180px;
+               width: 300px;
+            }
+            @include bpMin(m) {
+               height: 200px;
+               width: 320px;
+            }
+         }
+      }
+      .about_description {
+         @include bpMin(m) {
+            // text-align: center;
+            // width: 50%;
+            // margin: 0 auto;
+            width: 500px;
+         }
+      }
+   }
+}

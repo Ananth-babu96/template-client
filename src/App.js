@@ -1,25 +1,19 @@
-import logo from "./logo.svg";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import Homepage from "./Pages/Homepage/Homepage";
+import Navbar from "./Components/Navbar/Navbar";
 function App() {
    const [data, setData] = useState([]);
-   useEffect(() => {
-      axios
-         .get("https://template-api-7jof.onrender.com")
-         .then((res) => setData(res.data));
-      console.log("test log");
-   }, []);
+   useEffect(() => {}, []);
    return (
       <div className="App">
-         {data?.map((item, index) => {
-            return (
-               <img
-                  style={{ height: "200px" }}
-                  src={`https://template-api-7jof.onrender.com/images/${item.image}`}
-               />
-            );
-         })}
+         <Router>
+            <Navbar />
+            <Routes>
+               <Route path="/" element={<Homepage />} />
+            </Routes>
+         </Router>
       </div>
    );
 }

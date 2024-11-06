@@ -1,0 +1,45 @@
+@use "../../GlobalStyles/variables.scss" as *;
+@use "../../GlobalStyles/breakPoints.scss" as *;
+.contact {
+   & form {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin: 0 auto;
+      gap: 32px;
+      @include bpMax(m) {
+         gap: 20px;
+      }
+
+      @include bpMax(m) {
+         width: 70%;
+      }
+      @include bpMax(m) {
+         width: 90%;
+      }
+
+      & input,
+      & textarea {
+         width: 100%;
+         outline: none;
+         border: none;
+         background: #e4e4e4;
+         padding-left: 16px;
+      }
+      & input {
+         height: 62px;
+
+         &[type="submit"] {
+            width: 200px;
+            height: 42px;
+            background: $baseColor;
+            color: #fff;
+         }
+      }
+      & textarea {
+         height: 200px;
+         padding-top: 16px;
+         resize: none;
+      }
+   }
+}

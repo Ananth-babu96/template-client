@@ -1,0 +1,64 @@
+@use "../../GlobalStyles/breakPoints.scss" as *;
+@use "../../GlobalStyles/variables.scss" as *;
+.footer {
+   height: 60vh;
+   background: #454545;
+   margin: 62px 0 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+
+   & h1 {
+      color: $baseColor;
+      font-size: 44px;
+
+      @include bpMax(m) {
+         font-size: 22px;
+      }
+      & span {
+         font-weight: 300;
+         color: #fff;
+      }
+   }
+   & p {
+      color: #fff;
+   }
+
+   & .contact-info {
+      display: flex;
+
+      & .email,
+      & .phone {
+         display: flex;
+         align-items: center;
+
+         & .icon {
+            height: 16px;
+            font-size: 16px;
+            color: #fff;
+            margin: 0 8px;
+         }
+      }
+   }
+   & .social {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin: 64px 0;
+      & .icon {
+         color: $baseColor;
+         font-size: 32px;
+         height: 32px;
+      }
+   }
+   & .copyright {
+      display: flex;
+      align-items: center;
+      & span {
+         height: 20px;
+         margin-right: 8px;
+      }
+   }
+}

@@ -1,0 +1,17 @@
+@use "../../GlobalStyles/variables.scss" as *;
+@use "../../GlobalStyles/breakPoints.scss" as *;
+button {
+   height: 42px;
+   width: 160px;
+   border-radius: 6px;
+   outline: none;
+   border: none;
+   background: $baseColor;
+   color: #fff;
+
+   @include bpMax(s) {
+      height: 32px;
+      width: 120px;
+      border-radius: 4px;
+   }
+}
